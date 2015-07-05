@@ -87,7 +87,7 @@ function setup() {
 function draw() {
 	origin *= 1.01;
 	count = frameCount % log2(origin);
-	thold = max(origin/50, 1);
+	thold = max(origin/25, 3);//max(origin/50, 1);
 	var fv = hsbVals(log2(origin));
 	fill(fv[0], fv[1], fv[2], fv[3]);
 	rect(initX,initY,origin,origin);
