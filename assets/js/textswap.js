@@ -183,6 +183,11 @@ for (var i=0; i<swapIds.length; i++) {
 				// 	randIndx = Math.floor(Math.random()*picPaths.length);
 				// 	$(this).hide().attr('src', picPaths[randIndx]).fadeIn();
 				// }
+				else if (swapIds[i] === "swap19") {
+					$(this).removeClass("glyphicon-open-file")
+					$(this).removeClass("glyphicon")
+					$(this).hide().html(make_sentence(grammar)).fadeIn();
+				}
 				else {
 					$(this).hide().html(make_sentence(grammar)).fadeIn();
 				}
