@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="dick fractal">
+    <meta name="author" content="dick fractal">
+
+    <!-- favicon stuff -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favi/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favi/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favi/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favi/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favi/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favi/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favi/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favi/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favi/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favi/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favi/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/assets/favi/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favi/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favi/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favi/manifest.json">
+    <link rel="shortcut icon" href="/assets/favi/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="dick fractal">
+    <meta name="application-name" content="dick fractal">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="msapplication-TileImage" content="/assets/favi/mstile-144x144.png">
+    <meta name="msapplication-config" content="/assets/favi/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Dick Fractal</title>
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Cousine:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/jumbotron.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+    #p5mask {
+      z-index: 99;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      display:none;
+      position:fixed;
+      /*background-color: #F2F1EF;*/
+      overflow:auto;
+    }
+
+    #p5container {
+      z-index: 101;
+      margin: 0 auto;
+      /*width: 2304px;
+      height: 100%;*/
+    }
+
+    .main-img {
+      display: block;
+      margin-left: auto;
+      margin-right:auto;
+      border: 25px solid #F2F1EF;
+      border-radius: 5px;
+    }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="p5mask">
+    <div id="p5container"></div>
+    </div>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active" id="swap3"><a href="#">home</a></li>
+            <li role="presentation" id="swap4"><a href="#">about</a></li>
+            <li role="presentation" id="swap5"><a href="#">contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Dick Fractal, Ph.D.</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1 id="swap0">Bleeding Edge Research</h1>
+
+        <p class="lead justify-text" id="swap1">
+        Our field was founded on the claim that a central property of humans, intelligence -- the sapience of Homo sapiens -- can be so precisely described that a machine can be made to simulate it. This raises philosophical issues about the nature of the mind and the ethics of creating artificial beings endowed with human-like intelligence, issues which have been addressed by myth, fiction and philosophy since antiquity. Artificial intelligence has been the subject of tremendous optimism, but has also suffered stunning setbacks. Today it has become an essential part of the technology industry, providing the heavy lifting for many of the most challenging problems in computer science.
+        </p>
+        <p>
+        <a class="btn btn-lg btn-success glyphicon glyphicon glyphicon-open-file" role="button" href="http://rossgoodwin.com/fourohfour.pdf"></a>
+        <a class="btn btn-lg btn-danger" role="button" id="swap2" onclick="start()">Join our email list</a>
+        </p>
+      </div>
+
+      <img class="main-img" id="swap18" src="/assets/img/0079.jpg" onmouseover="onHover();" onmouseout="offHover();">
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4 id="swap6">Maximum Automation</h4>
+          <p id="swap7">Make as much as possible automatic: you write a little code, and it automatically selects algorithms, organizes data, creates interfaces, optimizes presentation and sets up production deployment.</p>
+
+          <h4 id="swap8">Entity Extraction</h4>
+          <p id="swap9">Named entity extraction is capable of identifying people, companies, organizations, cities, geographic features and other typed entities from your HTML, text or web-based content.</p>
+
+          <h4 id="swap10">Sentiment Analysis</h4>
+          <p id="swap11">Sentiment analysis is capable of computing document-level sentiment, sentiment for a user-specified target, entity-level sentiment, quotation-level sentiment, directional-sentiment and keyword-level sentiment.</p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4 id="swap12">Image Tagging</h4>
+          <p id="swap13">Quickly categorize and organize image libraries at a massive scale. By understanding complex visual scenes in their broader context, you can automatically extract knowledge from images and act upon what you learn.</p>
+
+          <h4 id="swap14">Facial Recognition</h4>
+          <p id="swap15">Returns the position, age, gender, and, in the case of celebrities, the identities of the people in the photo.</p>
+
+          <h4 id="swap16">Taxonomy</h4>
+          <p id="swap17">Deeper levels allow you to classify content into more accurate and lucrative subsegments. For instance, an application focused on identifying content discussing personal lending practices can narrow its classification into sub topics that target decisions with finer resolution.</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; Dick Fractal 2015</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  <script src="/assets/js/jquery-2.1.4.min.js"></script>
+  <script src="/assets/js/textswap.js"></script>
+  <script src="/assets/js/p5.min.js"></script>
+  <script src="/assets/js/snowflake.js"></script>
+  </body>
+</html>
